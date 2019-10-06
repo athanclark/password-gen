@@ -1,10 +1,10 @@
 name:                password-gen
 version:             0.1.0.0
-github:              "githubuser/password-gen"
+github:              "athanclark/password-gen"
 license:             BSD3
-author:              "Author name here"
-maintainer:          "example@example.com"
-copyright:           "2019 Author name here"
+author:              "Athan Clark"
+maintainer:          "athan.clark@gmail.com"
+copyright:           "2019 Athan Clark"
 
 extra-source-files:
 - README.md
@@ -17,16 +17,20 @@ extra-source-files:
 # To avoid duplicated efforts in documentation and dealing with the
 # complications of embedding Haddock markup inside cabal files, it is
 # common to point users to the README.md file.
-description:         Please see the README on GitHub at <https://github.com/githubuser/password-gen#readme>
+description:         Please see the README on GitHub at <https://github.com/athanclark/password-gen#readme>
 
 dependencies:
 - base >= 4.7 && < 5
+- base58-bytestring
+- bytestring
+- cryptonite
+- utf8-string
 
 library:
   source-dirs: src
 
 executables:
-  password-gen-exe:
+  password-gen:
     main:                Main.hs
     source-dirs:         app
     ghc-options:
@@ -35,6 +39,7 @@ executables:
     - -with-rtsopts=-N
     dependencies:
     - password-gen
+    - optparse-applicative
 
 tests:
   password-gen-test:
